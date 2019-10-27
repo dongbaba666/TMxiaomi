@@ -58,9 +58,11 @@ ul li{
                 this.className = 'b';
                 this.previousElementSibling.className = 'a';
                 this.nextElementSibling.className = 'a';
+                last.className = first.className = 'd';
             }
             lis[i].onmouseout = function(){
                 this.nextElementSibling.className = this.previousElementSibling.className = this.className = '';
+                last.className = first.className = 'd';
             }
         }
     }
