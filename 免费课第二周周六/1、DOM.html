@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" id="h">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="1">
+        <!---注释-->
+        1212121212
+        asdfghjkl
+        asdfghjkl
+        asdfghjkl
+        <!-- 注释 -->
+    </div>
+<script>
+    /*
+        ECMAScript:标准语法
+            只能进行一些对数据的操作，不能做更丰富的事情
+        DOM - document object model 文档对象模型
+            它的出现就是通过document提供的api(接口文档)，赋予开发者操作页面的能力
+
+        如果要操作某个元素，那肯定要先获取出来(document.....)
+
+        获取的元素是个对象，在js中，标签是和对象是相映射的关系，修改对象下的属性就有可能会改变标签，修改标签就会修改对象的属性
+
+
+        !难点 -- 复杂关系!
+
+        DOM树 - 把页面中所有的节点组织在一个树形结构中，方便我们通过关系去操作页面
+
+
+        页面中所有的内容都由不同的节点组成
+
+        元素节点代表的就是标签   节点是1
+        注释节点代表的就是注释   节点是8
+        属性节点代表的就是标签上的一些属性   节点是2
+        文本节点代表的就是文字、回车换行   节点是3
+        文档节点代表的就是document   节点是9
+
+        查看节点的类型：
+            nodeType
+
+        属性节点:
+            attributes
+
+
+        查找当前元素下的所有子节点：
+            childNodes
+
+        查看操作节点内容：
+            nodeValue
+
+        读取节点的名字:
+            nodeName
+    */
+
+    // console.log(h.nodeType)
+
+    // console.log(box.childNodes[1].nodeType) // 3
+    // console.log(document.nodeType) // 9
+    // console.log(box.attributes.nodeType)
+    // console.log(box.attributes[0].nodeValue)
+    // console.log(box.attributes[1].nodeName)
+
+
+    let obj = {
+        arr:[1,2,3],
+        ary:[3,2,1]
+    }
+
+    // let attrs = box.attributes;
+    // for(let i=0;i<attrs.length;i++)
+    //     if(attrs[i].nodeName === 'zf-haha'){
+    //         console.log(obj[attrs[i].nodeValue]);
+    //     }
+    // }
+
+    // console.log(box.attributes)
+</script>
+</body>
+</html>
