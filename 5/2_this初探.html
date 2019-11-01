@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        this：这个(小难点)
+    */
+
+    /*
+        this:掌握this代表着谁
+        在事件中，事件是谁，this就是谁
+
+        函数直接调用，默认this为window 点击事件为null 普通事件为underfined
+    */
+
+    // document.onclick = function(){
+    //     console.log(this);
+    // }
+
+    // document.onclick = fn;
+    // function fn(){
+    //     console.log(this); //window
+    // }
+    // fn();
+
+    // document.onclick = fn();
+    // function fn(){
+    //     console.log(this);//window
+    // }
+
+    // document.onhaha = fn();
+    // console.log(document.onhaha);
+
+    // document.onclick = function(){
+    //     console.log(this);
+    //     fn();
+    // }
+    // document.onclick = (function (){
+    //     console.log(this);//window
+    //     return fn;
+    // })()
+
+    // document.onclick = function (){
+    //     return fn;
+    // }
+
+    // function fn(){
+    //     console.log(this);
+    // }
+
+    // let obj = {
+    //     fn:fn,
+    //     oo:{
+    //         f:{
+    //             num:0,
+    //             fn:fn,
+    //             f:()=>{
+    //                 console.log(this);
+    //             }
+    //         }
+    //     }
+    // }
+    // // obj.oo.f.fn();
+    // obj.oo.f.f();
+
+    // document.onclick = function(){
+    //     let fn = ()=>{
+    //         console.log(this);
+    //     }
+    //     fn();
+    // }
+
+    // document.onclick = ()=>{
+    //     console.log(this);
+    // }
+</script>
+</body>
+</html>

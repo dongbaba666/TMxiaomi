@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    width: 100px;
+    border: 1px solid #000;
+}
+ul li{
+    height: 30px;
+    line-height: 30px;
+    color: #000;
+    text-align: center;
+}
+.a{
+    background: aquamarine;
+    color: #000;
+}
+.b{
+    background:chocolate;
+    color: #fff;
+}
+.c{
+    background: skyblue;
+    color: #fff;
+}
+.d{
+    background: pink;
+}
+</style>
+</head>
+<body>
+    <ul id="ul">
+        <li>&12345</li>
+        <li>&12345</li>
+        <li>&12345</li>
+        <li>&12345</li>
+        <li>&12345</li>
+    </ul>
+<script>
+    const lis = ul.children;
+    const last = ul.lastElementChild;//lis[lis.length-1];
+    const first = lis[0];
+
+    last.className = first.className = 'd';
+
+
+    for(let i=0;i<lis.length;i++){
+        //排除了第一个和最后一个
+        if(i !== 0 || i !== lis.length-1){
+            lis[i].onmouseover = function(){
+                this.className = 'b';
+                this.previousElementSibling.className = 'a';
+                this.nextElementSibling.className = 'a';
+                last.className = first.className = 'd';
+            }
+            lis[i].onmouseout = function(){
+                this.nextElementSibling.className = this.previousElementSibling.className = this.className = '';
+                last.className = first.className = 'd';
+            }
+        }
+    }
+
+    last.onmouseover = first.onmouseover = function(){
+        this.className = 'c';
+    }
+    last.onmouseout = first.onmouseout = function(){
+        this.className = 'd';
+    }
+</script>
+</body>
+</html>
+
+
+峡谷钢琴家 2019/10/28 9:26:25
+          // 2、补充代码实现最后的结果（常见面试题）
+          /*           function queryURLParameter(url) {
+                        let obj ={};
+                         url = url.split('?')[1];
+                        let ary = url.split('&');
+
+                         ary.forEach(item=>{
+                              let ary2 = item.split('=');
+                              obj[ary2[0]] = ary2[1];
+                         })
+                         return obj;
+                    }
+
+                    let str = 'http://www.zhufengpeixun.com/stu/?name=zxt&age=28&sex=0#teacher';
+                    let result = queryURLParameter(str);
+                    console.log(result); */
+          /*
+           {
+             name:'zxt',
+             age:28,
+             sex:0,
+             HASH:'teacher'
+           }
+          */
+          // 3.实现一个前端验证码功能，每次点击都能改变页面上展示的4位验证码
+
+          //  let str = '123456789asdfdgsdfghwtr';
+          //  let temp = '';
+          //  let len = str.length;
+          //  for(let i=0;i<4;i++){
+          //      temp += str[Math.round(Math.random()*(len-1))]
+          //  }
+          //  console.log(temp);
+
+
+
+
+          //4. 给#box下的li实现奇偶行变色 鼠标滑过li背景高亮展示，鼠标离开回归原有颜色 鼠标点击li弹出 ‘我是第N行’，例如：点击第一个li弹出 ‘我是第1行’
+               const lis = document.querySelectorAll('li') ;
+               lis.forEach((ele,i)=>{
+                    i%2?ele.className = 'mo':ele.className = '';
+                    ele.onmouseover = function(){
+                         ele.className = 'blue';
+                    }
+                    ele.onmouseout = function(){
+                         ele.className = this.color;
+                    }
+                    ele.onclick = function(){
+                       alert('我是第'+i+'个li');  
+                    }
+               })
+
+峡谷钢琴家 2019/10/28 9:26:32
+  // 1、补充代码实现最后的效果（任意数求和）
+          /*         
+            function sum() {
+                         let result = 0;
+                         for (let i = 0; i < arguments.length; i++) {
+                              let argi =Number(arguments[i]);
+                              if (argi) {
+                                   result += argi;
+                              }
+
+                         }
+                         return result;
+                    }
+                    let total = sum(10, 20, '30', '珠峰', '40');
+                    console.log(total); //=>100 
+                    */
