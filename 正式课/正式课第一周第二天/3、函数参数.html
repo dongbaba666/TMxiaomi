@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    //
+
+
+    //定义函数的时候括号中的自定义名字，就是形参(形式上的参数)
+    //等同于变量
+    function fn(a,b){
+       console.log(a,b);
+    }
+
+    fn(1,6)
+
+    //调用括号里面的数据叫实参(实实际际的参数)
+    //实参可以为任意的数据类型
+    function fn(callback){
+        callback(function(g){
+                g(function(num){
+                    num(function(l){
+                        l(function(s){
+                            s(function(m){
+                                m(function(n){
+                                    
+                                });
+                            });
+                        });
+                    });
+                });
+        });
+    }
+
+    fn(function (f){
+        f(function(g){
+            g(function(h){
+                h(function(o){
+                    o(function(t){
+                        t(function(p){
+
+                        });
+                    });
+                });
+            });
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    /*
+        在函数内有一个叫做arguments的关键字，这个关键字的含义是实参的集合
+
+        arguments是个类数组
+
+        箭头函数没有argunemnts
+
+        剩余运算符   function fn(...ary) 
+    */
+
+        function fn(a,...ary){
+            console.log(a,ary)
+        }
+
+        fn(1,2,3)
+    
+    // function fn(){
+    //     // console.log(arguments)
+    //     for(let i=0;i<arguments.length;i++){
+    //     }
+    // }
+
+    // let fn = () => {
+    //     console.log(argunemnts)
+    // }
+
+    // fn(1,2,3,4,5)
+</script>
+</body>
+</html>l

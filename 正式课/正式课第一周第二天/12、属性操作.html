@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" index="1"></div>
+<script>
+    /*
+        属性操作：
+            
+
+        box = { //001
+            id:'box'
+            attributes:{ //002
+                id:'box',
+                index:1
+            }
+        }
+
+        geiAttribute(属性名) 获取标签身上的属性
+
+        setAttribute(属性名，属性值) 设置标签身上行间属性
+
+        remove
+    */
+
+    // let obj = {
+    //     name:'珠峰',
+    //     age:'10',
+    //     name2:'二丫',
+    // }
+
+    // console.log(obj.name2);
+
+    /*
+        当用户在标签上自定义属性的时候，在元素对象上是不能直接通过元素下的这种方式获取元素下的属性
+
+        因为这些自定义的属性并不在同一个空间下
+
+        使用对象下的方式操作属性，只能用对象下的方式去操作(增删改查)
+
+        操作行间的属性，那么就用Attribute系列(增删改查)
+    */
+
+
+    const box = document.getElementById('box')
+
+    // console.dir(box.id)   //此时这个属性叫做对象属性
+    // console.log(box.index)
+    console.dir(box.getAttribute('index')); //1
+
+    随机验证码  queryString  隔行变色  DOM增删改  倒计时  随机抽取人名
+
+
+</script>
+</body>
+</html>
